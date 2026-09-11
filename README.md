@@ -16,4 +16,5 @@ health check during the Integration Tests on Staging stage.
 * `npm test` runs the Jest/Supertest test suite and generates a coverage
 report (`coverage/lcov.info`) used by the SonarCloud Code Analysis stage.
 * &#x20;  <!-- Triggering auto-build demo -->
+* <!-- Auto-trigger demo commit-->
 
