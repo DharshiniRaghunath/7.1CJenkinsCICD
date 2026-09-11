@@ -5,13 +5,13 @@ $process = Start-Process -FilePath "node" -ArgumentList "index.js" -PassThru -Wi
 Start-Sleep -Seconds 3
 
 try {
-    $home = Invoke-WebRequest -Uri "http://localhost:4000/" -UseBasicParsing
+    $homeResponse = Invoke-WebRequest -Uri "http://localhost:4000/" -UseBasicParsing
     $health = Invoke-WebRequest -Uri "http://localhost:4000/health" -UseBasicParsing
 
-    Write-Output "GET / returned status code: $($home.StatusCode)"
+    Write-Output "GET / returned status code: $($homeResponse.StatusCode)"
     Write-Output "GET /health returned status code: $($health.StatusCode)"
 
-    if ($home.StatusCode -ne 200 -or $health.StatusCode -ne 200) {
+    if ($homeResponse.StatusCode -ne 200 -or $health.StatusCode -ne 200) {
         throw "Integration test failed: unexpected status code"
     }
 
