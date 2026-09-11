@@ -1,0 +1,4 @@
+node_modules/
+coverage/
+sonar-scanner-cli.zip
+sonar-scanner-*/
